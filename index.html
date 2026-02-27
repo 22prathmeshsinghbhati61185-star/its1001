@@ -209,26 +209,9 @@ width:220px;
 }
 
 .hidden{display:none;margin-top:20px;}
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1.2s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
- @keyframes floatImage {
+@keyframes floatImage {
   0% { transform: translateY(0px); }
   100% { transform: translateY(-20px); }
-}
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.6));
-  pointer-events: none;
 }
 </style>
 </head>
@@ -371,19 +354,6 @@ particle.style.animationDuration=(15+Math.random()*10)+"s";
 document.body.appendChild(particle);
 }
 </script>
- <script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-});
 
-document.querySelectorAll("section").forEach(sec => {
-  sec.classList.add("fade-in");
-  observer.observe(sec);
-});
-</script>
 </body>
 </html>
