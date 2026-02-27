@@ -155,20 +155,26 @@ animation:typing 4s steps(45,end) forwards, blink 0.8s infinite;
 /* Floating Background Photos */
 .bgimg{
   position:absolute;
-  width:220px;        /* size control */
-  height:auto;        /* aspect ratio safe */
+  width:220px;
+  height:auto;
   opacity:0.35;
   border-radius:15px;
   object-fit:cover;
-  animation: floatImage 8s ease-in-out infinite alternate;
-  transform: translateZ(0);  /* render fix */
+  z-index:0;
 }
-.img1 { top: 10%; left: 20%; }
-.img2 { top: 20%; left: 60%; }
-.img3 { top: 60%; left: 30%; }
-.img4 { top: 70%; left: 70%; }
-.img5 { top: 40%; left: 10%; }
-.img6 { top: 50%; left: 85%; }
+.img1 { top: 10%; left: 20%; animation: float1 6s ease-in-out infinite alternate; }
+.img2 { top: 20%; left: 60%; animation: float2 8s ease-in-out infinite alternate; }
+.img3 { top: 60%; left: 30%; animation: float3 7s ease-in-out infinite alternate; }
+.img4 { top: 70%; left: 70%; animation: float4 9s ease-in-out infinite alternate; }
+.img5 { top: 40%; left: 10%; animation: float5 8s ease-in-out infinite alternate; }
+.img6 { top: 50%; left: 85%; animation: float6 6s ease-in-out infinite alternate; }
+
+@keyframes float1 { from{ transform: translateY(0px);} to{ transform: translateY(-10px);} }
+@keyframes float2 { from{ transform: translateY(0px);} to{ transform: translateY(-14px);} }
+@keyframes float3 { from{ transform: translateY(0px);} to{ transform: translateY(-12px);} }
+@keyframes float4 { from{ transform: translateY(0px);} to{ transform: translateY(-15px);} }
+@keyframes float5 { from{ transform: translateY(0px);} to{ transform: translateY(-9px);} }
+@keyframes float6 { from{ transform: translateY(0px);} to{ transform: translateY(-13px);} }
 /* Flowers */
 /* Flowers */
 .flower{
